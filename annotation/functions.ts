@@ -30,4 +30,23 @@ const throwError1 = (message: string): any => {
 }
 
 
+// Destructuring with Annotation
+const forcast = {
+  date: new Date(),
+  weather: 'sunny'
+}
+
+const logWeather = (forcast: { date: Date, weather: string }) {
+  console.log(forcast.date);
+  console.log(forcast.weather);
+}
+// ES2015
+const logWeather1 = ({ date, weather }: { date: Date, weather: string }) {
+  console.log(forcast.date);
+  console.log(forcast.weather);
+}
+
+
+logWeather(forcast);
+logWeather1(forcast);
 
