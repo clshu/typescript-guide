@@ -20,3 +20,4 @@ carMakers.map((car: string): string => {
 const importantDates: (Date | string)[] = [];
 importantDates.push(new Date());
 importantDates.push('2015-01-08');
+
