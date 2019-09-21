@@ -9,7 +9,7 @@ export interface Mappable {
     lat: number;
     lng: number;
   };
-
+  color: string;
   markerContent(): string;
 }
 export class CustomMap {
