@@ -3,7 +3,8 @@ node_modules
 npm-debug.log
 .vscode
 .next
-
+.cache
+dist/
 ### Andoid Development
 
 #built application files
