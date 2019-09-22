@@ -1,7 +1,7 @@
-import { CsvFileReader } from "./CSVFileReader"
 import { MatchResults } from './MatchResults'
+import { MatchReader } from './MatchReader'
 
-const reader = new CsvFileReader('football.csv')
+const reader = new MatchReader('football.csv')
 reader.read()
 
 
