@@ -91,4 +91,9 @@ export class LinkedList extends Sorter {
     console.log(list)
   }
 
+  printAt(index: number): void {
+    let node = this.at(index)
+    console.log(`data: ${node.data} next: ${node.next}`)
+  }
+
 }
