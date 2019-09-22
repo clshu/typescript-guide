@@ -1,4 +1,4 @@
-export const dataStringToDate = (dataString: string): Date{
+export const dataStringToDate = (dataString: string): Date => {
   // dataString: 28/10/2018 Euro format
   const dataParts = dataString
     .split('/')

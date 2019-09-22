@@ -1,9 +1,9 @@
 import { CsvFileReader } from "./CSVFileReader"
-import { MatchResults } from './MatchResult'
+import { MatchResults } from './MatchResults'
 
 const reader = new CsvFileReader('football.csv')
 reader.read()
-console.log(reader.data)
+
 
 let manUnitedWins = 0
 
