@@ -21,7 +21,7 @@ dist/
 bin/
 gen/
 report.html
-
+db.json
 # Local configuration file (sdk path, etc)
 local.properties
 
