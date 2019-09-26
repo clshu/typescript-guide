@@ -1,11 +1,12 @@
 import { User } from './models/User'
 
-// const user = new User({})
-// user.set({ name: 'Bobby', age: 99 })
+const user = new User({})
+user.set({ name: 'Bobby', age: 99 })
 
-// user.on('change', () => {
-//   console.log('change #1')
-// })
+
+user.events.on('change', () => {
+  console.log('change #1')
+})
 // user.on('change', () => {
 //   console.log('change #2')
 // })
@@ -14,8 +15,7 @@ import { User } from './models/User'
 // })
 // console.log(user)
 
-// user.trigger('change')
+user.events.trigger('change')
+console.log(user)
 // user.trigger('save')
 
-const user1 = new User({ id: 2, name: "Bobby Flayer", age: 20 })
-user1.save()
