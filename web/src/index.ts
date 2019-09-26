@@ -16,6 +16,5 @@ user.events.on('change', () => {
 // console.log(user)
 
 user.events.trigger('change')
-console.log(user)
 // user.trigger('save')
 
