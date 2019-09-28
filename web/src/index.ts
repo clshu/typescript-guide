@@ -2,9 +2,10 @@ import { User } from './models/User'
 
 const user = new User({ name: 'fox', age: 2 })
 
-user.get('name')
+console.log(user.get('name'))
 user.on('change', () => {
-  console.log('change #1')
+  console.log('User changed')
 })
-user.trigger('change')
+user.set({ name: 'Bob' })
+console.log(user.get('name'))
 

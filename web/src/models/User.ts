@@ -15,7 +15,9 @@ export class User {
   public sync: Sync<UserProps> = new Sync<UserProps>(RootUrl)
   public attributes: Attributes<UserProps>
 
-  constructor(private data: UserProps) { }
+  constructor(private attrs: UserProps) {
+    this.attributes = new Attributes<UserProps>(attrs)
+  }
 
   get on() {
     return this.events.on
@@ -29,4 +31,8 @@ export class User {
     return this.attributes.get
   }
 
+  set(update: UserProps) {
+    this.attributes.set(update)
+    this.events.trigger('change')
+  }
 }
