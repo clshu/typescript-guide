@@ -3,7 +3,7 @@ import { Eventing } from "./Eventing"
 import { ApiSync } from "./ApiSync"
 import { Attributes } from "./Attributes"
 
-const RootUrl = 'http://localhost:3000/users'
+export const RootUrl = 'http://localhost:3000/users'
 
 export interface UserProps {
   id?: number;

@@ -1,9 +1,9 @@
-import { User } from './models/User'
+import { Collection } from './models/Collection'
+import { RootUrl } from "./models/User"
+const collection = new Collection(RootUrl)
 
-const user = User.buildUser({ id: 1 })
-
-user.on('change', () => {
-  console.log(user)
+collection.on('change', () => {
+  console.log(collection)
 })
-user.fetch()
+collection.fetch()
 
