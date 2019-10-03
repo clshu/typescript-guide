@@ -17,7 +17,7 @@ export class ApiSync<T extends HasId> {
     if (id) {
       return Axios.put(`${this.rootUrl}/${id}`, data)
     } else {
-      return Axios.post(`${this.rootUrl}/${id}`, data)
+      return Axios.post(`${this.rootUrl}`, data)
     }
   }
 }

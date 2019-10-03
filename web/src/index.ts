@@ -1,7 +1,7 @@
 import { UserForm } from "./views/UserForm";
 import { User } from "./models/User";
 
-const user = User.buildUser({ name: 'Alan', age: 70 })
+const user = User.buildUser({ name: 'Owen', age: 70 })
 const root = document.getElementById('root')
 
 if (root) {
