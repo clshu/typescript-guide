@@ -5,17 +5,12 @@ export class UserForm {
 
   eventsMap(): { [key: string]: () => void } {
     return {
-      'click:button': this.onButtonClick,
-      'mouseenter:h1': this.onH1Hover
+      'click:.set-age': this.onSetAgeClick
     }
   }
 
-  onButtonClick(): void {
-    console.log('Hello Click')
-  }
-
-  onH1Hover(): void {
-    console.log('Hovering H1')
+  onSetAgeClick(): void {
+    console.log('Set Age')
   }
 
   bindEvents(fragment: DocumentFragment): void {
@@ -37,7 +32,8 @@ export class UserForm {
         <div>Name: ${this.model.get('name')}</div>
         <div>Age: ${this.model.get('age')}</div>
         <input/>
-        <button>Click me</button>
+        <button>Click Me</button>
+        <button class="set-age">Set Random Age</button>
       </div>
     `
   }
