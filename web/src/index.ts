@@ -1,16 +1,44 @@
-import { UserEdit } from "./views/UserEdit";
-import { User } from "./models/User";
+// import { UserList } from "./views/UserList"
+// import { Collection } from "./models/Collection"
+// import { UserProps, RootUrl, User } from "./models/User"
 
-const user = User.buildUser({ name: 'Owen', age: 70 })
-const root = document.getElementById('root')
+// const users = new Collection<User, UserProps>(
+//   RootUrl,
+//   (json: UserProps) => {
+//     return User.buildUser(json)
+//   }
+// )
 
-if (root) {
-  const userEdit = new UserEdit(
-    root,
-    user
-  )
-  userEdit.render()
-  console.log(userEdit)
-} else {
-  throw new Error('Root element is not found')
-}
+// users.on('change', () => {
+//   const root = document.getElementById('root')
+
+//   if (root) {
+//     const list = new UserList(root, users)
+//     list.render()
+//   } else {
+//     console.log('No Root')
+//   }
+//   console.log(users)
+// })
+
+// users.fetch()
+import { UserList } from './views/UserList';
+import { Collection } from './models/Collection';
+import { UserProps, User } from './models/User';
+
+const users = new Collection(
+  'http://localhost:3000/users',
+  (json: UserProps) => {
+    return User.buildUser(json);
+  }
+);
+
+users.on('change', () => {
+  const root = document.getElementById('root');
+
+  if (root) {
+    new UserList(root, users).render();
+  }
+});
+
+users.fetch();
