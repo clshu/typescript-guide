@@ -19,7 +19,7 @@ router.get('/login', (req: Request, res: Response) => {
   <form method="POST">
     <div>
       <label>Email</label>
-      <input name="em" />
+      <input name="email" />
     </div>
     <div>
       <label>Password</label>
@@ -32,10 +32,13 @@ router.get('/login', (req: Request, res: Response) => {
 
 router.post('/login', (req: RequestWithBody, res: Response) => {
   const { email, password } = req.body
-  if (email) {
-    res.send(email.toUpperCase())
+  if (email && password && email === 'hi@hi.com' && password === 'me') {
+    // mark this person as logged in
+    req.session = { loggedIn: true }
+    // redirect them to root route
+    res.redirect('/')
   } else {
-    res.send('Need Email')
+    res.send('Invalid Email or Password')
   }
 })
 
