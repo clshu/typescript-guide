@@ -19,7 +19,7 @@ router.get('/', (req: Request, res: Response) => {
     res.send(`
       <div>
         <div>You're NOT logged in</div>
-        <a href="/logout">Logout</a>
+        <a href="/login">Login</a>
       </div>
       `)
   }
@@ -52,5 +52,10 @@ router.post('/login', (req: RequestWithBody, res: Response) => {
     res.send('Invalid Email or Password')
   }
 })
+
+router.get('/logout', (req: Request, res: Response) => {
+  req.session = undefined
+  res.redirect('/')
+}
 
 export { router }
